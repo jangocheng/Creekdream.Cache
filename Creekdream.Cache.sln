@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{135DE079-4E46-4D21-9573-A727CAF80C81}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		pack.ps1 = pack.ps1
 		README.md = README.md
 	EndProjectSection
