@@ -3,11 +3,10 @@
   <PropertyGroup>
     <Version>0.1.0</Version>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageProjectUrl></PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/zengqinglei/creekdream/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/zengqinglei/Creekdream.Cache</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/zengqinglei/Creekdream/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/zengqinglei/creekdream</RepositoryUrl>
+    <RepositoryUrl>https://github.com/zengqinglei/Creekdream.Cache.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
