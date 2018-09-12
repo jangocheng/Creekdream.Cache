@@ -1,0 +1,13 @@
+﻿<Project>
+  
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/zengqinglei/creekdream/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/zengqinglei/creekdream</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
