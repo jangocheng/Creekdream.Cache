@@ -37,8 +37,6 @@ foreach($project in $projects) {
 # Go back to the pack folder
 Set-Location $packFolder
 
-Set-Location $packFolder
-
 Write-Host ""
 Write-Host "Do you wish to post to microsoft nuget ?"
 Write-Host ""
