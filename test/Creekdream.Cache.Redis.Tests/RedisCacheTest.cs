@@ -27,7 +27,7 @@ namespace Creekdream.Cache.Redis.Tests
             services.AddRedisCache(
                 options =>
                 {
-                    options.ConnectionString = "app4-esdserver.zhongan.com.cn";
+                    options.ConnectionString = "127.0.0.1";
                 });
             return base.ConfigureServices(services);
         }

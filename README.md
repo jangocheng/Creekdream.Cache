@@ -79,7 +79,13 @@ public async Task Object_Get_Set_Test()
 
 更多使用示例请参考单元测试。
 
-### Change Log
+## 参与贡献
+1. Fork Creekdream.AspNetCore 开源框架
+2. 新建 feature-\{tag} 分支
+3. 完成功能并提交代码
+4. 新建 Pull Request
+
+## Change Log
 
 *v0.1.0 2018-09-12*
 
