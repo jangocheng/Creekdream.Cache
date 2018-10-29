@@ -24,7 +24,7 @@ namespace Creekdream.Cache.Memory.Tests
         /// <inheritdoc />
         public override IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMemoryCache(options => { });
+            services.AddCreekdreamMemoryCache(options => { });
             return base.ConfigureServices(services);
         }
 

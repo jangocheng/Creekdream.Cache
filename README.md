@@ -2,6 +2,8 @@
 
 本项目缓存组件适用用于.NET STANDARD 2.0 的项目，目前支持 Redis 缓存以及 Memory 缓存。
 
+**[更新日志](https://github.com/zengqinglei/Creekdream.Cache/releases)**
+
 ## 一、Creekdream Memory 缓存
 
 内存缓存。
@@ -15,7 +17,7 @@ Install-Package Creekdream.Cache.Memory
 ### 配置
 
 ``` csharp
-services.AddMemoryCache(options => { });
+services.AddCreekdreamMemoryCache(options => { });
 ```
 
 ## 二、Creekdream Redis 缓存
@@ -31,7 +33,7 @@ Install-Package Creekdream.Cache.Redis
 ### 配置
 
 ``` csharp
-services.AddRedisCache(
+services.AddCreekdreamRedisCache(
     options =>
     {
         options.ConnectionString = "127.0.0.1";
@@ -39,6 +41,21 @@ services.AddRedisCache(
 ```
 
 ## 三、缓存统一使用示例
+
+#### 1. 获取服务
+``` csharp
+/// <inheritdoc />
+public class RedisCacheService:IRedisCacheService
+{
+    private readonly ICache _cache;
+
+    /// <inheritdoc />
+    public RedisCacheTest(ICacheManager cacheManager)
+    {
+        _cache = cacheManager.GetCache("RedisCacheTest");
+    }
+}
+```
 
 #### 1. 简单值存取示例
 ``` csharp
@@ -84,11 +101,3 @@ public async Task Object_Get_Set_Test()
 2. 新建 feature-\{tag} 分支
 3. 完成功能并提交代码
 4. 新建 Pull Request
-
-## Change Log
-
-*v0.1.0 2018-09-12*
-
-**Features**
-*  支持 Redis 缓存
-*  支持 Memory 缓存

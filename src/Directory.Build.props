@@ -1,7 +1,7 @@
 ﻿<Project>
   
   <PropertyGroup>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PackageProjectUrl>https://github.com/zengqinglei/Creekdream.Cache</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/zengqinglei/Creekdream/master/LICENSE</PackageLicenseUrl>

@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Creekdream.Cache.Memory
 {
@@ -11,7 +11,7 @@ namespace Creekdream.Cache.Memory
         /// <summary>
         /// Add Memory Cache Service
         /// </summary>
-        public static void AddMemoryCache(this IServiceCollection services, Action<MemoryCacheOptions> configOptions)
+        public static void AddCreekdreamMemoryCache(this IServiceCollection services, Action<MemoryCacheOptions> configOptions)
         {
             if (services == null)
             {

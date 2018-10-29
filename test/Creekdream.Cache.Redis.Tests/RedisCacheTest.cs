@@ -24,7 +24,7 @@ namespace Creekdream.Cache.Redis.Tests
         /// <inheritdoc />
         public override IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddRedisCache(
+            services.AddCreekdreamRedisCache(
                 options =>
                 {
                     options.ConnectionString = "127.0.0.1";
@@ -54,19 +54,26 @@ namespace Creekdream.Cache.Redis.Tests
         /// Object access test
         /// </summary>
         [Fact]
-        public async Task Object_Get_Set_Test()
+        public async Task Object_GetFactory_Test()
         {
             var key = nameof(ObjectTestClass);
-            var value = new ObjectTestClass()
-            {
-                Name = "zhangsan",
-                Age = 18
-            };
-            await _cache.SetAsync(key, value);
-
+            await _cache.RemoveAsync(key);
+            var name = "zhangsan";
+            var age = 18;
+            await _cache.GetAsync(
+                nameof(ObjectTestClass),
+                cacheKey =>
+                {
+                    return new ObjectTestClass()
+                    {
+                        Name = name,
+                        Age = age
+                    };
+                });
             var objValue = await _cache.GetAsync<ObjectTestClass>(key);
-            objValue.Name.ShouldBe(value.Name);
-            objValue.Age.ShouldBe(value.Age);
+            objValue.ShouldNotBeNull();
+            objValue.Name.ShouldBe(name);
+            objValue.Age.ShouldBe(age);
         }
 
         /// <summary>

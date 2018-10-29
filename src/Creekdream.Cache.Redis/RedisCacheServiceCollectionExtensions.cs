@@ -11,7 +11,7 @@ namespace Creekdream.Cache.Redis
         /// <summary>
         /// Add Redis Cache Service
         /// </summary>
-        public static void AddRedisCache(this IServiceCollection services, Action<RedisCacheOptions> configOptions)
+        public static void AddCreekdreamRedisCache(this IServiceCollection services, Action<RedisCacheOptions> configOptions)
         {
             if (services == null)
             {

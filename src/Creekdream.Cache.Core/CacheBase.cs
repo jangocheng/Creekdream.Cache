@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Nito.AsyncEx;
 using System;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace Creekdream.Cache
     /// </summary>
     public abstract class CacheBase : ICache
     {
-        protected readonly object SyncObj = new object();
+        private readonly AsyncLock _asyncLock = new AsyncLock();
         private readonly ILogger _logger;
 
         /// <inheritdoc />
@@ -32,11 +33,11 @@ namespace Creekdream.Cache
             }
             if (item == null && factory != null)
             {
-                lock (SyncObj)
+                using (await _asyncLock.LockAsync())
                 {
                     try
                     {
-                        item = GetAsync<T>(key).GetAwaiter().GetResult();
+                        item = await GetAsync<T>(key);
                     }
                     catch (Exception ex)
                     {
@@ -54,7 +55,7 @@ namespace Creekdream.Cache
 
                         try
                         {
-                            SetAsync(key, item).GetAwaiter().GetResult();
+                            await SetAsync(key, item);
                         }
                         catch (Exception ex)
                         {
